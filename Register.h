@@ -2,8 +2,9 @@
 #define ELABORATO3_REGISTER_H
 
 #include "Activity.h"
-#include <map>
-#include <string>
+#include <QDate>
+#include <QVector>
+#include <QMap>
 
 using namespace std;
 
@@ -13,13 +14,13 @@ public:
     Register();
 
     // Method to add an activity for a specific day
-    void addActivity(const std::string& day, const Activity activity);
+    void addActivity(const QDate &date, const Activity &activity);
 
     // Method to print activities for each day
-    void printActivitiesByDay(string day) const;
+    QVector<Activity> getActivitiesByDay(const QDate &date) const;
 
 private:
-    multimap<string, Activity> activitiesByDay;
+    QMap<QDate, QVector<Activity>> activitiesByDate;
 
 };
 

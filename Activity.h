@@ -2,29 +2,29 @@
 #define ELABORATO3_ACTIVITY_H
 
 #include <iostream>
-#include <string>
-#include <ctime>
+#include <QString>
+#include <QTime>
 
 using namespace std;
 
 class Activity {
 public:
-    Activity(string description, time_t start, time_t end);
+    Activity(QString &description, QTime &start, QTime &end);
 
     //getter and setter methods:
-    const string &getDescription() const;
-    void setDescription(const string &description);
+    const QString getDescription() const;
+    void setDescription(const QString &description);
 
-    time_t getStart() const;
-    void setStart(time_t start);
+    QTime getStart() const;
+    void setStart(QTime start);
 
-    time_t getAnEnd() const;
-    void setAnEnd(time_t anEnd);
+    QTime getAnEnd() const;
+    void setAnEnd(QTime anEnd);
 
 private:
-    string description;
-    time_t start;
-    time_t end;
+    QString description;
+    QTime start;
+    QTime end;
 };
 
 

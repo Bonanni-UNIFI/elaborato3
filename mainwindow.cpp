@@ -1,18 +1,21 @@
-//
-// Created by stefa on 08/07/2024.
-//
+#include "MainWindow.h"
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QDateEdit>
+#include <QHeaderView>
 
-// You may need to build the project (run Qt uic code generator) to get "ui_MainWindow.h" resolved
-
-#include "mainwindow.h"
-#include "ui_MainWindow.h"
-
-
-MainWindow::MainWindow(QWidget *parent) :
-        QWidget(parent), ui(new Ui::MainWindow) {
-    ui->setupUi(this);
+MainWindow::MainWindow(QWidget *parent)
+        : QMainWindow(parent), tableWidget(new QTableWidget(this)) {
+    setupUI();
+    loadDummyData();
+    showActivities();
 }
 
-MainWindow::~MainWindow() {
-    delete ui;
+MainWindow::~MainWindow() {}
+
+void MainWindow::setupUI() {}
+
+void MainWindow::loadDummyData() {}
+
+void MainWindow::showActivities() {
 }

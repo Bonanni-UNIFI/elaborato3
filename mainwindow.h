@@ -23,7 +23,7 @@ private slots:
     void showActivities();
 
 private:
-    std::tm selectedDate;
+    QDate selectedDate;
     Register activityLog;
     QTableWidget *tableWidget;
 

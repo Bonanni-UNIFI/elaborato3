@@ -1,6 +1,6 @@
 #include "Activity.h"
 
-Activity::Activity(QString &description, QTime &start, QTime &end):description(description), start(start), end(end) {}
+Activity::Activity(const QString &description, QTime start, QTime end):description(description), start(start), end(end) {}
 
 const QString Activity::getDescription() const { return description; }
 void Activity::setDescription(const QString &description) { Activity::description = description; }

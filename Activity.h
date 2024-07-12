@@ -9,7 +9,7 @@ using namespace std;
 
 class Activity {
 public:
-    Activity(QString &description, QTime &start, QTime &end);
+    Activity(const QString &description, QTime start, QTime end);
 
     //getter and setter methods:
     const QString getDescription() const;

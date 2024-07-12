@@ -42,5 +42,15 @@ void MainWindow::loadDummyData() {
 }//function that add the activities to the activityLog
 
 void MainWindow::showActivities() {
+    tableWidget->setRowCount(0);
 
+    QVector<Activity> activities = activityLog.getActivitiesByDay(selectedDate);
+    for (const Activity &activity : activities) {
+        int row = tableWidget->rowCount();
+        tableWidget->insertRow(row);
+
+        tableWidget->setItem(row, 0, new QTableWidgetItem(activity.getDescription()));
+        tableWidget->setItem(row, 1, new QTableWidgetItem(activity.getStart().toString()));
+        tableWidget->setItem(row, 2, new QTableWidgetItem(activity.getAnEnd().toString()));
+    }
 }//function that shows the activities to the user interface

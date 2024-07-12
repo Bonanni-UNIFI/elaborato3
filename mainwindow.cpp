@@ -14,7 +14,21 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow() {}
 
 void MainWindow::setupUI() {
+    QWidget *centralWidget = new QWidget(this);
+    QVBoxLayout *layout = new QVBoxLayout(centralWidget);
 
+    QDateEdit *dateEdit = new QDateEdit(QDate::currentDate(), this);
+    dateEdit->setCalendarPopup(true);
+
+    tableWidget->setColumnCount(3);
+    tableWidget->setHorizontalHeaderLabels({"Description", "Start Time", "End Time"});
+    tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    layout->addWidget(dateEdit);
+    layout->addWidget(tableWidget);
+    setCentralWidget(centralWidget);
+
+    selectedDate = QDate::currentDate();
 }//function that creates the user interface
 
 void MainWindow::loadDummyData() {

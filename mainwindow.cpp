@@ -19,6 +19,10 @@ void MainWindow::setupUI() {
 
     QDateEdit *dateEdit = new QDateEdit(QDate::currentDate(), this);
     dateEdit->setCalendarPopup(true);
+    connect(dateEdit, &QDateEdit::dateChanged, [this](const QDate &date) {
+        selectedDate = date;
+        showActivities();
+    });//lamda function that is called when we changed the data on the calendar with the User Interface
 
     tableWidget->setColumnCount(3);
     tableWidget->setHorizontalHeaderLabels({"Description", "Start Time", "End Time"});

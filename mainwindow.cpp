@@ -24,6 +24,9 @@ void MainWindow::setupUI() {
     tableWidget->setHorizontalHeaderLabels({"Description", "Start Time", "End Time"});
     tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
+    centralWidget->setFixedWidth(700);
+    centralWidget->setFixedHeight(700);
+
     layout->addWidget(dateEdit);
     layout->addWidget(tableWidget);
     setCentralWidget(centralWidget);

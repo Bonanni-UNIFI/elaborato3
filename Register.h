@@ -16,6 +16,9 @@ public:
     // Method to add an activity for a specific day
     void addActivity(const QDate &date, const Activity &activity);
 
+    // Method to remove an activity from activitiesByDate
+    bool removeActivity(const QDate &date, const Activity &activity);
+
     // Method to print activities for each day
     QVector<Activity> getActivitiesByDay(const QDate &date) const;
 

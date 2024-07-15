@@ -4,6 +4,7 @@
 #include <iostream>
 #include <QString>
 #include <QTime>
+#include <stdexcept>
 
 using namespace std;
 

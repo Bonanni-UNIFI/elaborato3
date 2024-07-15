@@ -27,6 +27,8 @@ private:
     Register activityLog;
     QTableWidget *tableWidget;
 
+    friend class TestMainWindow;
+
     void setupUI();
     void loadDummyData();
 };
